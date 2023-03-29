@@ -16,6 +16,8 @@ namespace ProductApps
         private decimal gst;
         private decimal totalCharge;
         private decimal wrapCharge;
+        private decimal gstCharge;
+        decimal gstRate = 1.1m;
 
         private decimal Price
         {
@@ -78,6 +80,13 @@ namespace ProductApps
         {
             wrapCharge = totalCharge + 5;
             return wrapCharge;
+        }
+
+        public decimal calGstCharge()
+        {
+            
+            gstCharge = wrapCharge * gstRate;
+            return gstCharge;
         }
     }
 }
